@@ -12,10 +12,11 @@ export class Stack extends cdk.Stack {
     const handler = new lambdaNode.NodejsFunction(this, "Handler", {
       environment: {
         SENDGRID_API_KEY: `${
-          secretsManager.Secret.fromSecretAttributes(this, "sendgridApiKey", {
-            secretArn:
-              "arn:aws:secretsmanager:ap-southeast-2:819490137741:secret:uluruWeather/sendgridApiKey-OokPfO",
-          }).secretValue
+          secretsManager.Secret.fromSecretName(
+            this,
+            "sendgridApiKey",
+            "uluruWeather/sendgridApiKey"
+          ).secretValue
         }`,
       },
       memorySize: 3008,
