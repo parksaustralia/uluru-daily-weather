@@ -83,25 +83,6 @@ Object {
       },
       "Type": "AWS::Lambda::Function",
     },
-    "HandlerAllowEventRuleMyTestStackScheduleRule36250335BE152C55": Object {
-      "Properties": Object {
-        "Action": "lambda:InvokeFunction",
-        "FunctionName": Object {
-          "Fn::GetAtt": Array [
-            "Handler886CB40B",
-            "Arn",
-          ],
-        },
-        "Principal": "events.amazonaws.com",
-        "SourceArn": Object {
-          "Fn::GetAtt": Array [
-            "ScheduleRuleDA5BD877",
-            "Arn",
-          ],
-        },
-      },
-      "Type": "AWS::Lambda::Permission",
-    },
     "HandlerServiceRoleDefaultPolicyCBD0CC91": Object {
       "Properties": Object {
         "PolicyDocument": Object {
@@ -156,6 +137,25 @@ Object {
         ],
       },
       "Type": "AWS::IAM::Role",
+    },
+    "ScheduleRuleAllowEventRuleMyTestStackScheduleRule3625033547FCA01B": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "Handler886CB40B",
+            "Arn",
+          ],
+        },
+        "Principal": "events.amazonaws.com",
+        "SourceArn": Object {
+          "Fn::GetAtt": Array [
+            "ScheduleRuleDA5BD877",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
     },
     "ScheduleRuleDA5BD877": Object {
       "Properties": Object {
