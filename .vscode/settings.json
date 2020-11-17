@@ -1,0 +1,5 @@
+{
+  "editor.tabSize": 2,
+  "workbench.preferredLightColorTheme": "Community Material Theme Palenight High Contrast",
+  "terminal.integrated.shell.linux": "/bin/zsh"
+}

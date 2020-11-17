@@ -5,11 +5,9 @@
     "uluru-weather": "bin/uluru-weather.js"
   },
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "test": "jest",
     "cdk": "cdk",
-    "debug": "ts-node -e 'require(\"./lib/stack.handler.ts\").handler()'"
+    "debug": "ts-node -e 'require(\"./lib/stack.handler.ts\").handler()'",
+    "test": "jest"
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.72.0",
@@ -25,6 +23,7 @@
     "jest": "^26.4.2",
     "lambda-local": "^1.7.4",
     "parcel": "2.0.0-beta.1",
+    "prettier": "^2.1.2",
     "ts-jest": "^26.2.0",
     "ts-node": "^8.1.0",
     "typescript": "~3.9.7"

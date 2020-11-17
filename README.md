@@ -18,6 +18,12 @@ This project requires [Node.js 12.x](https://nodejs.org/en/download/releases/) a
 - `npm run test`
 - `npm run debug`
 
+The project includes a Github Codespaces config that will create an environment with all of the require dependencies installed. All that is required after creating the codespace is to run `aws configure` and enter your AWS API keys and region.
+
+You may also like to set your SendGrid API key for local development and debugging:
+
+`export SENDGRID_API_KEY="SG.<snip>"`
+
 ## Deployment
 
 - `npm run cdk deploy` deploy this stack to your default AWS account/region
