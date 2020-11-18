@@ -4,14 +4,12 @@ import * as cdk from "@aws-cdk/core";
 import * as lambda from "@aws-cdk/aws-lambda";
 import * as lambdaNode from "@aws-cdk/aws-lambda-nodejs";
 import * as secretsManager from "@aws-cdk/aws-secretsmanager";
-import path from "path";
 
 export class Stack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     const handler = new lambdaNode.NodejsFunction(this, "Handler", {
-      entry: path.join(__dirname, ".", "stack.handler.ts"),
       environment: {
         SENDGRID_API_KEY: `${
           secretsManager.Secret.fromSecretNameV2(

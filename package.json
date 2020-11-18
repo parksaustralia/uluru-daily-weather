@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "cdk": "cdk",
-    "debug": "ts-node -e 'require(\"./lib/stack.handler.ts\").handler()'",
+    "debug": "ts-node -e 'require(\"./lib/stack.Handler.ts\").handler()'",
     "test": "jest"
   },
   "devDependencies": {
