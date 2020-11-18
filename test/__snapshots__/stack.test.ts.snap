@@ -3,16 +3,16 @@
 exports[`matches snapshot 1`] = `
 Object {
   "Parameters": Object {
-    "AssetParameters067d57ffec315bcdb38e36f010b8e93bf7ebf8a248aa6566015e8feb16f95c75ArtifactHashC99618F0": Object {
-      "Description": "Artifact hash for asset \\"067d57ffec315bcdb38e36f010b8e93bf7ebf8a248aa6566015e8feb16f95c75\\"",
+    "AssetParametersf6062ada0b5224624050db4e4dfda1365bdcadff98c5aff3d98541345456406aArtifactHashF369CBD7": Object {
+      "Description": "Artifact hash for asset \\"f6062ada0b5224624050db4e4dfda1365bdcadff98c5aff3d98541345456406a\\"",
       "Type": "String",
     },
-    "AssetParameters067d57ffec315bcdb38e36f010b8e93bf7ebf8a248aa6566015e8feb16f95c75S3Bucket99B58F5C": Object {
-      "Description": "S3 bucket for asset \\"067d57ffec315bcdb38e36f010b8e93bf7ebf8a248aa6566015e8feb16f95c75\\"",
+    "AssetParametersf6062ada0b5224624050db4e4dfda1365bdcadff98c5aff3d98541345456406aS3Bucket11781DED": Object {
+      "Description": "S3 bucket for asset \\"f6062ada0b5224624050db4e4dfda1365bdcadff98c5aff3d98541345456406a\\"",
       "Type": "String",
     },
-    "AssetParameters067d57ffec315bcdb38e36f010b8e93bf7ebf8a248aa6566015e8feb16f95c75S3VersionKeyF722E577": Object {
-      "Description": "S3 key for asset version \\"067d57ffec315bcdb38e36f010b8e93bf7ebf8a248aa6566015e8feb16f95c75\\"",
+    "AssetParametersf6062ada0b5224624050db4e4dfda1365bdcadff98c5aff3d98541345456406aS3VersionKey538ED8F1": Object {
+      "Description": "S3 key for asset version \\"f6062ada0b5224624050db4e4dfda1365bdcadff98c5aff3d98541345456406a\\"",
       "Type": "String",
     },
   },
@@ -25,7 +25,7 @@ Object {
       "Properties": Object {
         "Code": Object {
           "S3Bucket": Object {
-            "Ref": "AssetParameters067d57ffec315bcdb38e36f010b8e93bf7ebf8a248aa6566015e8feb16f95c75S3Bucket99B58F5C",
+            "Ref": "AssetParametersf6062ada0b5224624050db4e4dfda1365bdcadff98c5aff3d98541345456406aS3Bucket11781DED",
           },
           "S3Key": Object {
             "Fn::Join": Array [
@@ -38,7 +38,7 @@ Object {
                       "Fn::Split": Array [
                         "||",
                         Object {
-                          "Ref": "AssetParameters067d57ffec315bcdb38e36f010b8e93bf7ebf8a248aa6566015e8feb16f95c75S3VersionKeyF722E577",
+                          "Ref": "AssetParametersf6062ada0b5224624050db4e4dfda1365bdcadff98c5aff3d98541345456406aS3VersionKey538ED8F1",
                         },
                       ],
                     },
@@ -51,7 +51,7 @@ Object {
                       "Fn::Split": Array [
                         "||",
                         Object {
-                          "Ref": "AssetParameters067d57ffec315bcdb38e36f010b8e93bf7ebf8a248aa6566015e8feb16f95c75S3VersionKeyF722E577",
+                          "Ref": "AssetParametersf6062ada0b5224624050db4e4dfda1365bdcadff98c5aff3d98541345456406aS3VersionKey538ED8F1",
                         },
                       ],
                     },
@@ -64,7 +64,26 @@ Object {
         "Environment": Object {
           "Variables": Object {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-            "SENDGRID_API_KEY": "{{resolve:secretsmanager:uluruWeather/sendgridApiKey:SecretString:::}}",
+            "SENDGRID_API_KEY": Object {
+              "Fn::Join": Array [
+                "",
+                Array [
+                  "{{resolve:secretsmanager:arn:",
+                  Object {
+                    "Ref": "AWS::Partition",
+                  },
+                  ":secretsmanager:",
+                  Object {
+                    "Ref": "AWS::Region",
+                  },
+                  ":",
+                  Object {
+                    "Ref": "AWS::AccountId",
+                  },
+                  ":secret:uluruWeather/sendgridApiKey:SecretString:::}}",
+                ],
+              ],
+            },
           },
         },
         "Handler": "index.handler",

@@ -26,11 +26,25 @@ You may also like to set your SendGrid API key for local development and debuggi
 
 ## Deployment
 
-- `npm run cdk deploy` deploy this stack to your default AWS account/region
+First the [SendGrid API key](#sendgrid-api-key) must be set in the account using AWS secrets manager.
+
+Then you can deploy the stack with:
+
+```
+npm run cdk deploy
+```
 
 ## SendGrid API key
 
-The SendGrid API key is stored in AWS Secrets Manager and is pulled when deploying the application. This means to change the key the secret needs to first be updated and then the CDK stack redeployed.
+The SendGrid API key is stored in AWS Secrets Manager and is pulled when deploying the application.
+
+To set the key:
+
+```
+aws secretsmanager create-secret --name uluruWeather/sendgridApiKey --description "SendGrid API key" --secret-string "<key>"
+```
+
+To change the key, the secret needs to first be updated and then the CDK stack redeployed:
 
 ```
 aws secretsmanager update-secret --name uluruWeather/sendgridApiKey --description "SendGrid API key" --secret-string "<key>"
