@@ -19,7 +19,7 @@
     "@aws-cdk/aws-secretsmanager": "1.74.0",
     "@aws-cdk/core": "1.74.0",
     "@types/jest": "26.0.15",
-    "@types/node": "10.17.27",
+    "@types/node": "14.17.27",
     "aws-cdk": "1.74.0",
     "jest": "26.6.1",
     "lambda-local": "1.7.4",
