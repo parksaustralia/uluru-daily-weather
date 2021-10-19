@@ -30,7 +30,7 @@
     "typescript": "3.9.9"
   },
   "dependencies": {
-    "@sendgrid/client": "7.4.0",
+    "@sendgrid/client": "7.5.0",
     "@types/luxon": "1.25.1",
     "@types/xmldom": "0.1.30",
     "aws-sdk": "2.784.0",
