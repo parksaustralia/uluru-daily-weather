@@ -37,7 +37,7 @@
     "basic-ftp": "4.6.2",
     "handlebars": "4.7.6",
     "inline-css": "3.0.0",
-    "luxon": "1.25.0",
+    "luxon": "1.28.1",
     "xmldom": "0.4.0",
     "xpath": "0.0.32"
   },
