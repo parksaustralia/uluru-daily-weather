@@ -39,7 +39,7 @@
     "inline-css": "3.0.0",
     "luxon": "1.25.0",
     "xmldom": "0.4.0",
-    "xpath": "0.0.32"
+    "xpath": "0.0.34"
   },
   "targets": {
     "cdk-lambda": {
